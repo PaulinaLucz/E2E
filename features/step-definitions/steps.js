@@ -26,7 +26,7 @@ When("Enters the word {string} into the search engine", async (word) => {
  });
  
  Then("the search is initiated, at least one search result appears", async () => {
-    const results = await $('//*[@id="app"]/div[3]/section/div/div/div[2]/div/div/div/div[2]/div[1]');
+    const results = await $('//*[@id="app"]/div[4]/section/div/div/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/div[2]');
     await expect(results).toHaveChildren({ gte: 1 });
  });
  
