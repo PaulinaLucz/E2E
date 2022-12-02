@@ -22,11 +22,11 @@ When("Enters the word {string} into the search engine", async (word) => {
  });
  
  When("clicks the search", async () => {
-    await $('//*[@id="app"]/header/div[1]/div[1]/div[1]/div[5]/form/div/div[2]/button').click();
+    await $('//*[@class="ico ico-search"]').click();
  });
  
  Then("the search is initiated, at least one search result appears", async () => {
-    const results = await $('//*[@id="app"]/div[4]/section/div/div/div[2]/div[1]/div/div/div[2]/div[1]/div[2]/div[2]');
+    const results = await $('div.list-wrap > div:nth-child(3)');
     await expect(results).toHaveChildren({ gte: 1 });
  });
  
@@ -45,7 +45,5 @@ When("Enters the word {string} into the search engine", async (word) => {
  
  Then("the main page", async () => {
     await browser.url(`https://www.newegg.com/`)
-    
-
  });
 
