@@ -9,7 +9,6 @@ Given("if a promotional banner appears, close it", async () => {
        const ad = await $('#modal-Website > div.modal-dialog.modal-dialog-centered > div > div > a > img');
        const adClose = await $('#modal-Website > div.modal-dialog.modal-dialog-centered > div > button');
        await adClose.click();
-       await expect(ad).not.toBeDisplayed();
     } catch (error) {
        console.log('The promotional banner is disabled');
     }
@@ -38,7 +37,7 @@ When("Enters the word {string} into the search engine", async (word) => {
  });
  
  When("clicks on the online store logo", async () => {
-    const logo = await $('//*[@id="app"]/header/div[1]/div[1]/div[1]/div[2]/a/img');
+    const logo = await $('//*[@class="header2021-logo-img"]');
     await expect(logo).toBeExisting();
     await logo.click();
  });
