@@ -6,14 +6,14 @@ Given("Home page is open", async () => {
 
 Given("if a promotional banner appears, close it", async () => {
     try {
-       const ad = await $('#modal-Website > div.modal-dialog.modal-dialog-centered > div > div > a > img');
-       const adClose = await $('#modal-Website > div.modal-dialog.modal-dialog-centered > div > button');
+       const ad = await $('#modal-Website > div > div > img');
+       const adClose = await $(`#modal-Website > div > div > button`);
        await adClose.click();
     } catch (error) {
        console.log('The promotional banner is disabled');
     }
  });
-
+ 
 //scenario search
 
 When("Enters the word {string} into the search engine", async (word) => {
